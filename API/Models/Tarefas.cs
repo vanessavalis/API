@@ -10,11 +10,11 @@
             DataFim = dataFim;
         }
 
-        public int Id { get; private set; }
-        public string Nome { get; private set; }
-        public String Descricao { get; private set; }
-        public DateTime DataInicio { get; private set; }
-        public DateTime? DataFim { get; private set; }  
+        public int Id { get;  set; }
+        public string Nome { get;  set; }
+        public String Descricao { get;  set; }
+        public DateTime DataInicio { get;  set; }
+        public DateTime? DataFim { get;  set; }  
         
 
     }

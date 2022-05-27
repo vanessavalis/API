@@ -31,22 +31,24 @@ namespace API.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime?>("DataFim")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<DateTime>("DataInicio")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(140)
+                        .HasColumnType("nvarchar(140)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tarefas");
+                    b.ToTable("tarefas", (string)null);
                 });
 #pragma warning restore 612, 618
         }

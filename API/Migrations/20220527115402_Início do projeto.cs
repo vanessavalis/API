@@ -5,31 +5,31 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace API.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Iníciodoprojeto : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Tarefas",
+                name: "tarefas",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataFim = table.Column<DateTime>(type: "datetime2", nullable: true)
+                    Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Descricao = table.Column<string>(type: "nvarchar(140)", maxLength: 140, nullable: false),
+                    DataInicio = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DataFim = table.Column<DateTime>(type: "datetime", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tarefas", x => x.Id);
+                    table.PrimaryKey("PK_tarefas", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Tarefas");
+                name: "tarefas");
         }
     }
 }
